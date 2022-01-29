@@ -54,36 +54,32 @@ namespace data_report7
                     table.Columns.Add(headers[1], typeof(string));
                     table.Columns.Add(headers[2], typeof(string));
                     table.Columns.Add(headers[3], typeof(string));
-                    table.Columns.Add(headers[4], typeof(string));
+                    table.Columns.Add(headers[4].Replace("/","-"), typeof(string));
 
 
+                    while ((read = reader.ReadLine()) != null)
+                     {
+                         string[] info = read.Split(",");
+                         if (info[0].Length < 3)
+                         {
+                             table.Rows.Add(info);
+                         }
 
+                         for (int i = 0; i < department.Count; i++)
+                         {
+                             string[] showArray = (string[]) department[i];
+                             string show = showArray[0];
+                             if(show.Equals(info[2]))
+                             {
+                                 string[] aux = (string[])department[i];
+                                 int num = int.Parse(aux[1]) + 1;
 
-                   /* while (read != null)
-                    {
-                        string[] info = read.Split(",");
-                        if (info[0].Length < 3)
-                        {
-                            table.Rows.Add(info);
-                        }
-
-                        for (int i = 0; i < department.Count; i++)
-                        {
-                            string[] showArray = (string[]) department[i];
-                            string show = showArray[0];
-                            if(show.Equals(info[2]))
-                            {
-                                string[] aux = (string[])department[i];
-                                int num = int.Parse(aux[1]) + 1;
-
-                                string[] aux2 = (string[])department[i];
-                                aux2[1] = num.ToString();
-                                department[i] = aux2;
-                            }
-                        }
-                        
-
-                    }*/
+                                 string[] aux2 = (string[])department[i];
+                                 aux2[1] = num.ToString();
+                                 department[i] = aux2;
+                             }
+                         }
+                     }
 
                     dtgData.DataContext = table.DefaultView;
                     info = table;

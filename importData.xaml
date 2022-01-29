@@ -11,9 +11,9 @@
 
         <Label Content="Importar datos" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" Margin="393,6,0,0"/>
         <Label Content="Dar click aquí para importar los datos" HorizontalAlignment="Left" Margin="153,101,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <Button x:Name="btnImportData" Content="Importar" HorizontalAlignment="Left" Margin="669,102,0,0" VerticalAlignment="Top" Background="#FFFF8787" BorderBrush="Black" FontSize="25" Click="btnImportData_Click" Visibility="Visible"/>
+        <Button x:Name="btnImportData" Content="Importar" HorizontalAlignment="Left" Margin="669,102,0,0" VerticalAlignment="Top" Background="#FFFF8787" BorderBrush="Black" FontSize="25" Click="btnImportData_Click" Visibility="Visible" />
 
-        <DataGrid x:Name="dtgData" HorizontalAlignment="Left" VerticalAlignment="Top" Width="960" Height="362" Margin="23,250,0,0" ItemsSource="{Binding}"/>
+        <DataGrid x:Name="dtgData" Margin="10,250,10,10" ItemsSource="{Binding}" Grid.Row="1" Grid.ColumnSpan="2" IsReadOnly="True"/> 
 
 
         <Label Content="Selecciona una letra para filtrar" HorizontalAlignment="Left" Margin="243,170,0,0" VerticalAlignment="Top" FontSize="22"/>

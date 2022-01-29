@@ -25,6 +25,7 @@ namespace data_report7
     {
         private DataTable info;
         private ArrayList department;
+        public string[] Labels { get; set; }
 
 
         public importData()
@@ -45,12 +46,94 @@ namespace data_report7
                     var path = openFile.OpenFile();
                     using StreamReader reader = new StreamReader(path);
                     MessageBox.Show("Documento cargado exitosamente", "Mensaje de información");
+
+                    var read = reader.ReadLine();
+
+                    string[] headers = read.Split(",");
+                    table.Columns.Add(headers[0], typeof(string));
+                    table.Columns.Add(headers[1], typeof(string));
+                    table.Columns.Add(headers[2], typeof(string));
+                    table.Columns.Add(headers[3], typeof(string));
+                    table.Columns.Add(headers[4], typeof(string));
+
+
+
+
+                   /* while (read != null)
+                    {
+                        string[] info = read.Split(",");
+                        if (info[0].Length < 3)
+                        {
+                            table.Rows.Add(info);
+                        }
+
+                        for (int i = 0; i < department.Count; i++)
+                        {
+                            string[] showArray = (string[]) department[i];
+                            string show = showArray[0];
+                            if(show.Equals(info[2]))
+                            {
+                                string[] aux = (string[])department[i];
+                                int num = int.Parse(aux[1]) + 1;
+
+                                string[] aux2 = (string[])department[i];
+                                aux2[1] = num.ToString();
+                                department[i] = aux2;
+                            }
+                        }
+                        
+
+                    }*/
+
+                    dtgData.DataContext = table.DefaultView;
+                    info = table;
+
+
+                    cbLetters.Items.Add("A");
+                    cbLetters.Items.Add("B");
+                    cbLetters.Items.Add("C");
+                    cbLetters.Items.Add("D");
+                    cbLetters.Items.Add("E");
+                    cbLetters.Items.Add("F");
+                    cbLetters.Items.Add("G");
+                    cbLetters.Items.Add("H");
+                    cbLetters.Items.Add("I");
+                    cbLetters.Items.Add("J");
+                    cbLetters.Items.Add("K");
+                    cbLetters.Items.Add("L");
+                    cbLetters.Items.Add("M");
+                    cbLetters.Items.Add("N");
+                    cbLetters.Items.Add("O");
+                    cbLetters.Items.Add("P");
+                    cbLetters.Items.Add("Q");
+                    cbLetters.Items.Add("R");
+                    cbLetters.Items.Add("S");
+                    cbLetters.Items.Add("T");
+                    cbLetters.Items.Add("U");
+                    cbLetters.Items.Add("V");
+                    cbLetters.Items.Add("W");
+                    cbLetters.Items.Add("X");
+                    cbLetters.Items.Add("Y");
+                    cbLetters.Items.Add("Z");
+
                 }
 
-                else {
+                else
+                {
                     MessageBox.Show("El documento no fue cargado exitosamente", "Mensaje de información");
                 }
+
+
             }
+
+        }
+
+
+
+        private void cbSelect(object sender, SelectionChangedEventArgs e)
+        {
+
+
         }
 
 

@@ -13,28 +13,11 @@
         <Label Content="Dar click aquí para importar los datos" HorizontalAlignment="Left" Margin="153,101,0,0" VerticalAlignment="Top" FontSize="22"/>
         <Button x:Name="btnImportData" Content="Importar" HorizontalAlignment="Left" Margin="669,102,0,0" VerticalAlignment="Top" Background="#FFFF8787" BorderBrush="Black" FontSize="25" Click="btnImportData_Click" Visibility="Visible"/>
 
-        <DataGrid x:Name="dtgData" HorizontalAlignment="Left" VerticalAlignment="Top" Width="960" Height="362" Margin="23,250,0,0">
+        <DataGrid x:Name="dtgData" HorizontalAlignment="Left" VerticalAlignment="Top" Width="960" Height="362" Margin="23,250,0,0" ItemsSource="{Binding}"/>
 
-            <DataGrid.Resources>
-                <Style TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="Background" Value="Cyan"/>
-                    <Setter Property="FontWeight" Value="Regular"/>
-                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
-                    <Setter Property="BorderBrush" Value="Black"/>
-                </Style>
-            </DataGrid.Resources>
-
-            <DataGrid.Columns>
-                <DataGridTextColumn Header= "C. Departamento"/>
-                <DataGridTextColumn Header= "C. Municipio"/>
-                <DataGridTextColumn Header= "N. Departamento"/>
-                <DataGridTextColumn Header= "N. Municipio"/>
-                <DataGridTextColumn Header= "Tipo: Municipio/Isla/A. no municipalizada"/>
-            </DataGrid.Columns>
-        </DataGrid>
 
         <Label Content="Selecciona una letra para filtrar" HorizontalAlignment="Left" Margin="243,170,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <ComboBox HorizontalAlignment="Left" Margin="669,174,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name ="cbLetters" HorizontalAlignment="Left" Margin="669,174,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbSelect"/>
         <Button x:Name="btnPieChartPage" Content="Siguiente Página" HorizontalAlignment="Left" Margin="429,638,0,0" VerticalAlignment="Top" BorderBrush="Black" Background="#FF4FAAFF" FontSize="25" FontWeight="Bold" Height="45" Width="250" Click="btnPieChartPage_Click"/>
 
     </Grid>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:data_report7"
         mc:Ignorable="d"
-        Title="Reporte de datos Dane" Height="730" Width="1100" ResizeMode="NoResize" FontSize="20" FontWeight="Bold" Icon="/icon.ico" Background="#FFC6BFF7">
+        Title="Reporte de datos Dane" Height="730" Width="1000" ResizeMode="NoResize" FontSize="20" FontWeight="Bold" Icon="/icon.ico" Background="#FFC6BFF7">
     <Grid Margin="10">
 
         <Grid.RowDefinitions>

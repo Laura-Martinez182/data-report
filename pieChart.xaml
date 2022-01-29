@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:data_report7"
         mc:Ignorable="d"
-        Title="Diagrama de pastel" Height="730" Width="1100" ResizeMode="NoResize" Icon="/diagrama.ico" FontSize="20" FontWeight="Bold" Background="#FFB6FFE3">
+        Title="Diagrama de pastel" Height="730" Width="1000" ResizeMode="NoResize" Icon="/diagrama.ico" FontSize="20" FontWeight="Bold" Background="#FFB6FFE3">
     <Grid>
         <Label Content="Diagrama de pastel" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" Margin="0,31,0,0"/>
 

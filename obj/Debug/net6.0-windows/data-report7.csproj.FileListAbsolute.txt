@@ -23,3 +23,28 @@ C:\Users\Diana\Documents\Proyectos C#\data-report7\obj\Debug\net6.0-windows\impo
 C:\Users\Diana\Documents\Proyectos C#\data-report7\obj\Debug\net6.0-windows\importData.baml
 C:\Users\Diana\Documents\Proyectos C#\data-report7\obj\Debug\net6.0-windows\pieChart.g.cs
 C:\Users\Diana\Documents\Proyectos C#\data-report7\obj\Debug\net6.0-windows\pieChart.baml
+C:\Users\laura\Desktop\Programing\data-report\bin\Debug\net6.0-windows\data-report7.exe
+C:\Users\laura\Desktop\Programing\data-report\bin\Debug\net6.0-windows\data-report7.deps.json
+C:\Users\laura\Desktop\Programing\data-report\bin\Debug\net6.0-windows\data-report7.runtimeconfig.json
+C:\Users\laura\Desktop\Programing\data-report\bin\Debug\net6.0-windows\data-report7.dll
+C:\Users\laura\Desktop\Programing\data-report\bin\Debug\net6.0-windows\ref\data-report7.dll
+C:\Users\laura\Desktop\Programing\data-report\bin\Debug\net6.0-windows\data-report7.pdb
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.csproj.AssemblyReference.cache
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\importData.g.cs
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\pieChart.g.cs
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7_MarkupCompile.cache
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7_MarkupCompile.lref
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\importData.baml
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\pieChart.baml
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.g.resources
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.AssemblyInfoInputs.cache
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.AssemblyInfo.cs
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.csproj.CoreCompileInputs.cache
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.dll
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\ref\data-report7.dll
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.pdb
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.genruntimeconfig.cache

@@ -40,15 +40,24 @@ namespace data_report7
 
             if (openFile.ShowDialog() == true)
             {
-                var path = openFile.OpenFile();
-                using StreamReader reader = new StreamReader(path); 
+                if (MessageBox.Show("Está seguro de escoger este documento?", "Guardar documento", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    var path = openFile.OpenFile();
+                    using StreamReader reader = new StreamReader(path);
+                    MessageBox.Show("Documento cargado exitosamente", "Mensaje de información");
+                }
+
+                else {
+                    MessageBox.Show("El documento no fue cargado exitosamente", "Mensaje de información");
+                }
             }
         }
+
 
         private void btnPieChartPage_Click(object sender, RoutedEventArgs e)
         {
             Window pageChart = new pieChart();
-            pageChart.Show();
+            pageChart.ShowDialog();
         }
     }
 }

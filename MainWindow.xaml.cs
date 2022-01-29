@@ -28,7 +28,7 @@ namespace data_report7
         private void btnImportDataPage_Click(object sender, RoutedEventArgs e)
         {
             Window pageImportData = new importData();
-            pageImportData.Show();
+            pageImportData.ShowDialog();
         }
     }
 }

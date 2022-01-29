@@ -10,7 +10,7 @@
 
         <Label Content="Importar datos" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" Margin="427,4,0,0"/>
         <Label Content="Dar click aquí para importar los datos" HorizontalAlignment="Left" Margin="187,99,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <Button x:Name="btnImportData" Content="Importar" HorizontalAlignment="Left" Margin="703,100,0,0" VerticalAlignment="Top" Background="#FFFF8787" BorderBrush="Black" FontSize="25" Click="btnImportData_Click"/>
+        <Button x:Name="btnImportData" Content="Importar" HorizontalAlignment="Left" Margin="703,100,0,0" VerticalAlignment="Top" Background="#FFFF8787" BorderBrush="Black" FontSize="25" Click="btnImportData_Click" Visibility="Visible"/>
 
         <DataGrid x:Name="dtgData" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1006" Height="362" Margin="57,248,0,0">
 

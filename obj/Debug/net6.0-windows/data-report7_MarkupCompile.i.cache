@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Diana\Documents\Proyectos C#\data-report7\obj\Debug\net6.0-windows\
+C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\
 data_report7
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Diana\Documents\Proyectos C#\data-report7\App.xaml
+C:\Users\laura\Desktop\Programing\data-report\App.xaml
 3-1226355321
 
 7-100276496
 1941142463650
 importData.xaml;MainWindow.xaml;pieChart.xaml;
 
-True
+False
 

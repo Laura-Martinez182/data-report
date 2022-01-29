@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Diana\Documents\Proyectos C#\data-report7\App.xaml
-11407045341
+3-1226355321
 
-51826840365
+7-100276496
 1941142463650
-MainWindow.xaml;
+importData.xaml;MainWindow.xaml;pieChart.xaml;
 
-False
+True
 

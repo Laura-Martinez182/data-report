@@ -24,5 +24,11 @@ namespace data_report7
         {
             InitializeComponent();
         }
+
+        private void btnImportDataPage_Click(object sender, RoutedEventArgs e)
+        {
+            Window pageImportData = new importData();
+            pageImportData.Show();
+        }
     }
 }

@@ -1,0 +1,30 @@
+﻿<Window x:Class="data_report7.importData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:data_report7"
+        mc:Ignorable="d"
+        Title="Importar archivo de datos" Height="730" Width="1100" FontSize="20" FontWeight="Bold" Icon="/importar.ico" Background="#FFFBC37E" ResizeMode="NoResize">
+    <Grid x:Name="cboxFilterDepartments">
+
+        <Label Content="Importar datos" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" Margin="427,4,0,0"/>
+        <Label Content="Dar click aquí para importar los datos" HorizontalAlignment="Left" Margin="187,99,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <Button x:Name="btnImportData" Content="Importar" HorizontalAlignment="Left" Margin="703,100,0,0" VerticalAlignment="Top" Background="#FFFF8787" BorderBrush="Black" FontSize="25" Click="btnImportData_Click"/>
+
+        <DataGrid x:Name="dtgData" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1006" Height="362" Margin="57,248,0,0">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header= "C. Departamento"/>
+                <DataGridTextColumn Header= "C. Municipio"/>
+                <DataGridTextColumn Header= "N. Departamento"/>
+                <DataGridTextColumn Header= "N. Municipio"/>
+                <DataGridTextColumn Header= "Tipo: Municipio/Isla/A. no municipalizada"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Selecciona una letra para filtrar" HorizontalAlignment="Left" Margin="277,168,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <ComboBox HorizontalAlignment="Left" Margin="703,172,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnPieChartPage" Content="Siguiente Página" HorizontalAlignment="Left" Margin="463,636,0,0" VerticalAlignment="Top" BorderBrush="Black" Background="#FF4FAAFF" FontSize="25" FontWeight="Bold" Height="45" Width="250" Click="btnPieChartPage_Click"/>
+
+    </Grid>
+</Window>

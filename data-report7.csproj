@@ -9,11 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="diagrama.ico" />
+    <None Remove="icon.ico" />
     <None Remove="icon.png" />
+    <None Remove="importar.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="icon.png" />
+    <Resource Include="diagrama.ico" />
+    <Resource Include="icon.ico" />
+    <Resource Include="importar.ico" />
   </ItemGroup>
 
 </Project>

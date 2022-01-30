@@ -90,7 +90,7 @@ namespace data_report7
 
                     cbLetters.Items.Add("A");
                     cbLetters.Items.Add("B");
-                    cbLetters.Items.Add("CHOCÓ");
+                    cbLetters.Items.Add("C");
                     cbLetters.Items.Add("D");
                     cbLetters.Items.Add("E");
                     cbLetters.Items.Add("F");
@@ -137,8 +137,12 @@ namespace data_report7
             }
             else
             {
-                info.DefaultView.RowFilter = "[Nombre Departamento] ='" + cbLetters.SelectedItem.ToString() + "'";
+               
+               info.DefaultView.RowFilter =  "[Nombre Departamento] like '" + cbLetters.SelectedItem.ToString() + "%'";
+                    
+                
                 dtgData.DataContext = info.DefaultView;
+
             }
 
         }

@@ -8,13 +8,13 @@ C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\
 data_report7
 none
 false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\laura\Desktop\Programing\data-report\App.xaml
 2407284988
 
-41784194093
-1961567709541
+7467842000
+392-1159548214
 importData.xaml;MainWindow.xaml;
 
-False
+True
 

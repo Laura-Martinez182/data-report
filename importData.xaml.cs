@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using System.Windows.Navigation;
 using LiveCharts;
 using LiveCharts.Wpf;
+using LiveCharts.Defaults;
 
 namespace data_report7
 {
@@ -94,7 +95,7 @@ namespace data_report7
 
                          if(!isThere)
                         {
-                            string[] dept = {headers[2], "1"};
+                            string[] dept = {info[2], "1"};
                             department.Add(dept);
                         }
                      }
@@ -164,7 +165,7 @@ namespace data_report7
             for (int i = 0; i < department.Count; i++)
             {
                 string[] aux = (string[])department[i];
-                departmentsNum[i] = aux[0]; 
+                departmentsNum[i] = aux[0];
             }
 
             double[] municipios = new double[department.Count];
@@ -175,69 +176,39 @@ namespace data_report7
                 municipios[i] = quantity;
             }
 
+
+
             //Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
-            
-            PieCollection = new SeriesCollection
-            {
-                new PieSeries
+           
+                PieCollection = new SeriesCollection
                 {
-                    Title = "Municipios",
-                    Values = new ChartValues<double>(municipios)
-                }
-            };
+                     new PieSeries
+                    {
+                    Title = "ANTIOQUIA",
+                    Values = new ChartValues<double> (municipios)
+                    },
 
-            Labels = departmentsNum;
-            Formatter = value => value.ToString("N");
+                     new PieSeries
+                    {
+                    Title = "CHOCÓ",
+                    Values = new ChartValues<double> (municipios)
+                    },
 
-            DataContext = this;
+                    new PieSeries
+                    {
+                    Title = "VAUPÉS",
+                    Values = new ChartValues<double> (municipios)
+                    },
+                };
+                    
+          
+                    Labels = departmentsNum;
+                    Formatter = value => value.ToString("N");
+
+                    DataContext = this;
+            
         }
 
-
-
-
-
-        //generatePieChart(departmentsNum, municipios);
-
-
-
-        /*PieCollection = new SeriesCollection
-        {
-            PieCollection.Add(
-            new PieSeries
-            {
-                Title = "Municipios",
-                Values = new ChartValues<double>(municipios),
-                DataLabels = true,
-                LabelPoint = labelPoint
-            }
-            )
-        };*/
-
-        /*Labels = departmentsNum;
-        Formatter = value => value.ToString("N");
-
-        DataContext = this;*/
-
-
-        /*private void generatePieChart(string[] deparments,double[] municipios)
-        {
-            Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
-            PieCollection = new SeriesCollection();
-
-            for (int i=0; i< deparments.Length; i++)
-            {
-                PieCollection.Add(new PieSeries()
-                {
-                    Title = "Municipios",
-                    Values = new ChartValues<double>(municipios),
-                    DataLabels = true,
-                    LabelPoint = labelPoint
-                });
-            }
-            Formatter = value => value.ToString("N");
-            pieChart.Series = PieCollection;
-            DataContext = this;
-        }*/
 
         private void btnPieChart_Click(object sender, RoutedEventArgs e)
         {

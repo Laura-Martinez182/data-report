@@ -21,7 +21,7 @@
         <Label x:Name="lbInformationFilter" Content="Selecciona una letra para filtrar" HorizontalAlignment="Left" Margin="178,117,0,0" VerticalAlignment="Top" FontSize="22"/>
         <lvc:PieChart x:Name="pieChart" LegendLocation="Right" Series="{Binding PieCollection}"  Margin="118,145,119,78">
             <lvc:PieChart.ChartLegend>
-                <lvc:DefaultLegend BulletSize="15" TextBlock.FontSize="17" Height="263"></lvc:DefaultLegend>
+                <lvc:DefaultLegend BulletSize="15" TextBlock.FontSize="20" Height="213"></lvc:DefaultLegend>
             </lvc:PieChart.ChartLegend>
             <lvc:PieChart.DataTooltip>
                 <lvc:DefaultTooltip BulletSize="20"></lvc:DefaultTooltip>

@@ -1,7 +1,6 @@
 C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.csproj.AssemblyReference.cache
 C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\importData.g.cs
 C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\MainWindow.g.cs
-C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\pieChart.g.cs
 C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7_MarkupCompile.cache
 C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7_MarkupCompile.lref
@@ -18,7 +17,6 @@ C:\Users\laura\Desktop\Programing\data-report\bin\Debug\net6.0-windows\LiveChart
 C:\Users\laura\Desktop\Programing\data-report\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
 C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\importData.baml
 C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\MainWindow.baml
-C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\pieChart.baml
 C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.g.resources
 C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\laura\Desktop\Programing\data-report\obj\Debug\net6.0-windows\data-report7.AssemblyInfoInputs.cache

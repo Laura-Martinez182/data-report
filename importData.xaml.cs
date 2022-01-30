@@ -31,7 +31,8 @@ namespace data_report7
 
         public string[] Labels { get; set; }
         public Func<double, string> Formatter { get; set; }
-        public SeriesCollection PieCollection { get; private set; }
+        public SeriesCollection SeriesCollection { get; set; }
+        //public SeriesCollection PieCollection { get; set; }
 
         public importData()
         {
@@ -74,6 +75,7 @@ namespace data_report7
                              table.Rows.Add(info);
                          }
 
+                         bool isThere = false;
                          for (int i = 0; i < department.Count; i++)
                          {
                              string[] showArray = (string[]) department[i];
@@ -86,8 +88,15 @@ namespace data_report7
                                  string[] aux2 = (string[])department[i];
                                  aux2[1] = num.ToString();
                                  department[i] = aux2;
+                                isThere = true; 
                              }
                          }
+
+                         if(!isThere)
+                        {
+                            string[] dept = {headers[2], "1"};
+                            department.Add(dept);
+                        }
                      }
 
                     dtgData.DataContext = table.DefaultView;
@@ -147,6 +156,8 @@ namespace data_report7
             }
         }
 
+        public SeriesCollection PieCollection { get; set; }
+
         private void count()
         {
             string[] departmentsNum = new string[department.Count];
@@ -164,28 +175,51 @@ namespace data_report7
                 municipios[i] = quantity;
             }
 
-            generatePieChart(departmentsNum, municipios);
-
-            /*PieCollection = new SeriesCollection
+            //Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+            
+            PieCollection = new SeriesCollection
             {
-                PieCollection.Add(
                 new PieSeries
                 {
                     Title = "Municipios",
-                    Values = new ChartValues<double>(municipios),
-                    DataLabels = true,
-                    LabelPoint = labelPoint
+                    Values = new ChartValues<double>(municipios)
                 }
-                )
-            };*/
+            };
 
-            /*Labels = departmentsNum;
+            Labels = departmentsNum;
             Formatter = value => value.ToString("N");
 
-            DataContext = this;*/
+            DataContext = this;
         }
 
-        private void generatePieChart(string[] deparments,double[] municipios)
+
+
+
+
+        //generatePieChart(departmentsNum, municipios);
+
+
+
+        /*PieCollection = new SeriesCollection
+        {
+            PieCollection.Add(
+            new PieSeries
+            {
+                Title = "Municipios",
+                Values = new ChartValues<double>(municipios),
+                DataLabels = true,
+                LabelPoint = labelPoint
+            }
+            )
+        };*/
+
+        /*Labels = departmentsNum;
+        Formatter = value => value.ToString("N");
+
+        DataContext = this;*/
+
+
+        /*private void generatePieChart(string[] deparments,double[] municipios)
         {
             Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
             PieCollection = new SeriesCollection();
@@ -203,7 +237,7 @@ namespace data_report7
             Formatter = value => value.ToString("N");
             pieChart.Series = PieCollection;
             DataContext = this;
-        }
+        }*/
 
         private void btnPieChart_Click(object sender, RoutedEventArgs e)
         {

@@ -19,7 +19,14 @@
         <ComboBox x:Name ="cbLetters" HorizontalAlignment="Left" Margin="674,132,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbSelect" Text = "Letra" FontSize="20" FontWeight="Normal"/>
 
         <Label x:Name="lbInformationFilter" Content="Selecciona una letra para filtrar" HorizontalAlignment="Left" Margin="178,117,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <lvc:PieChart x:Name="pieChart" LegendLocation="Right" Series="{Binding seriesCollection}" Hoverable="True" InnerRadius="0" Margin="118,145,119,78"/>
+        <lvc:PieChart x:Name="pieChart" LegendLocation="Right" Series="{Binding PieCollection}"  Margin="118,145,119,78">
+            <lvc:PieChart.ChartLegend>
+                <lvc:DefaultLegend BulletSize="15" TextBlock.FontSize="17" Height="263"></lvc:DefaultLegend>
+            </lvc:PieChart.ChartLegend>
+            <lvc:PieChart.DataTooltip>
+                <lvc:DefaultTooltip BulletSize="20"></lvc:DefaultTooltip>
+            </lvc:PieChart.DataTooltip>
+        </lvc:PieChart>
         <Label x:Name="lbTittleChart" Content="Gráfico circular" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" Margin="376,6,0,0"/>
         <Button x:Name="btnBack" Content="Regresar" HorizontalAlignment="Left" Margin="878,27,0,0" VerticalAlignment="Top" BorderBrush="Black" Background="#FF4FAAFF" FontSize="25" FontWeight="Bold" Height="46" Width="141" Click="btnBack_Click"/>
 

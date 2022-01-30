@@ -36,6 +36,7 @@ namespace data_report7
         public importData()
         {
             InitializeComponent();
+            pieChart.Visibility = Visibility.Hidden;
             department = new ArrayList();
         }
 
@@ -174,18 +175,20 @@ namespace data_report7
             Formatter = value => value.ToString("N");
 
             DataContext = this;
+
+            
         }
 
 
     private void btnPieChartPage_Click(object sender, RoutedEventArgs e)
         {
-            Window pageChart = new pieChart();
-            pageChart.ShowDialog();
-           
-            /*btnImportData.Visibility = Visibility.Hidden;
+            btnImportData.Visibility = Visibility.Hidden;
             btnPieChartPage.Visibility = Visibility.Hidden;
             cbLetters.Visibility = Visibility.Hidden;
-            dtgData.Visibility = Visibility.Visible;*/
+            dtgData.Visibility = Visibility.Hidden;
+            lbInformationImport.Visibility= Visibility.Hidden;
+            lbInformationFilter.Visibility = Visibility.Hidden;
+            pieChart.Visibility = Visibility.Visible;
             count();
         }
     }

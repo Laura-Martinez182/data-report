@@ -37,6 +37,8 @@ namespace data_report7
         {
             InitializeComponent();
             pieChart.Visibility = Visibility.Hidden;
+            lbTittleChart.Visibility=Visibility.Hidden;
+            btnBack.Visibility = Visibility.Hidden;
             department = new ArrayList();
         }
 
@@ -90,7 +92,7 @@ namespace data_report7
 
                     dtgData.DataContext = table.DefaultView;
                     info = table;
-                    btnPieChartPage.IsEnabled = true;
+                    btnPieChart.IsEnabled = true;
 
                     cbLetters.Items.Add("Letra");
                     cbLetters.SelectedItem = "Letra";
@@ -162,34 +164,92 @@ namespace data_report7
                 municipios[i] = quantity;
             }
 
-            PieCollection = new SeriesCollection
+            generatePieChart(departmentsNum, municipios);
+
+            /*PieCollection = new SeriesCollection
             {
+                PieCollection.Add(
                 new PieSeries
                 {
                     Title = "Municipios",
                     Values = new ChartValues<double>(municipios),
+                    DataLabels = true,
+                    LabelPoint = labelPoint
                 }
-            };
+                )
+            };*/
 
-            Labels = departmentsNum;
+            /*Labels = departmentsNum;
             Formatter = value => value.ToString("N");
 
-            DataContext = this;
+            DataContext = this;*/
+        }
 
+        private void generatePieChart(string[] deparments,double[] municipios)
+        {
+            Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+            PieCollection = new SeriesCollection();
+
+            for (int i=0; i< deparments.Length; i++)
+            {
+                PieCollection.Add(new PieSeries()
+                {
+                    Title = "Municipios",
+                    Values = new ChartValues<double>(municipios),
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                });
+            }
+            Formatter = value => value.ToString("N");
+            pieChart.Series = PieCollection;
+            DataContext = this;
+        }
+
+        private void btnPieChart_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Está seguro de visualizar el gráfico?", "Gráfico", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                MessageBox.Show("Gráfico cargado exitosamente", "Mensaje de información");
+                btnImportData.Visibility = Visibility.Hidden;
+                btnPieChart.Visibility = Visibility.Hidden;
+                cbLetters.Visibility = Visibility.Hidden;
+                dtgData.Visibility = Visibility.Hidden;
+                lbInformationImport.Visibility = Visibility.Hidden;
+                lbInformationFilter.Visibility = Visibility.Hidden;
+                pieChart.Visibility = Visibility.Visible;
+                lbTittleChart.Visibility = Visibility.Visible;
+                lbTittleImport.Visibility = Visibility.Hidden;
+                btnBack.Visibility = Visibility.Visible;
+                count();
+            }
+            else 
+            {
+                MessageBox.Show("El gráfico no fue cargado exitosamente", "Mensaje de información");
+            }
             
         }
 
-
-    private void btnPieChartPage_Click(object sender, RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            btnImportData.Visibility = Visibility.Hidden;
-            btnPieChartPage.Visibility = Visibility.Hidden;
-            cbLetters.Visibility = Visibility.Hidden;
-            dtgData.Visibility = Visibility.Hidden;
-            lbInformationImport.Visibility= Visibility.Hidden;
-            lbInformationFilter.Visibility = Visibility.Hidden;
-            pieChart.Visibility = Visibility.Visible;
-            count();
+            if (MessageBox.Show("Está seguro de volver al punto anterior?", "Visualización de datos", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                MessageBox.Show("Datos cargados exitosamente", "Mensaje de información");
+                btnImportData.Visibility = Visibility.Visible;
+                btnPieChart.Visibility = Visibility.Visible;
+                cbLetters.Visibility = Visibility.Visible;
+                dtgData.Visibility = Visibility.Visible;
+                lbInformationImport.Visibility = Visibility.Visible;
+                lbInformationFilter.Visibility = Visibility.Visible;
+                pieChart.Visibility = Visibility.Hidden;
+                lbTittleChart.Visibility = Visibility.Hidden;
+                lbTittleImport.Visibility = Visibility.Visible;
+                btnBack.Visibility = Visibility.Hidden;
+            }
+
+            else
+            {
+                MessageBox.Show("Los datos no fueeron cargados exitosamente", "Mensaje de información");
+            }
         }
     }
 }

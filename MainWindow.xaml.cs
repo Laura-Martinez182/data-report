@@ -29,7 +29,6 @@ namespace data_report7
         {
             Window pageImportData = new importData();
             pageImportData.ShowDialog();
-           
         }
     }
 }

@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="colombia.png" />
     <None Remove="diagrama.ico" />
+    <None Remove="grafico.png" />
     <None Remove="icon.ico" />
     <None Remove="icon.png" />
     <None Remove="importar.ico" />
@@ -20,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="colombia.png" />
     <Resource Include="diagrama.ico" />
     <Resource Include="icon.ico" />
     <Resource Include="importar.ico" />

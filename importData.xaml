@@ -6,21 +6,22 @@
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:local="clr-namespace:data_report7"
         mc:Ignorable="d"
-        Title="Importar archivo de datos" Height="764" Width="1052" FontSize="20" FontWeight="Bold" Icon="/importar.ico" Background="#FFFBC37E" ResizeMode="NoResize">
+        Title="Importar archivo de datos" Height="700" Width="1052" FontSize="20" FontWeight="Bold" Icon="/importar.ico" Background="#FFFBC37E" ResizeMode="NoResize">
 
     <Grid x:Name="cboxFilterDepartments">
 
-        <Label Content="Importar datos" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" Margin="393,6,0,0"/>
+        <Label x:Name="lbTittleImport" Content="Importar datos" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" Margin="393,6,0,0"/>
         <Label x:Name="lbInformationImport" Content="Dar click aquí para importar los datos" HorizontalAlignment="Left" Margin="178,73,0,0" VerticalAlignment="Top" FontSize="22"/>
         <Button x:Name="btnImportData" Content="Importar" HorizontalAlignment="Left" Margin="674,73,0,0" VerticalAlignment="Top" Background="#FFFF8787" BorderBrush="Black" FontSize="25" Click="btnImportData_Click" Visibility="Visible" Width="120" />
-        <Button x:Name="btnPieChartPage" Content="Ver gráfico" HorizontalAlignment="Left" Margin="393,190,0,0" VerticalAlignment="Top" BorderBrush="Black" Background="#FF4FAAFF" FontSize="25" FontWeight="Bold" Height="45" Width="250" Click="btnPieChartPage_Click" IsEnabled="False"/>
+        <Button x:Name="btnPieChart" Content="Ver gráfico" HorizontalAlignment="Left" Margin="393,190,0,0" VerticalAlignment="Top" BorderBrush="Black" Background="#FF4FAAFF" FontSize="25" FontWeight="Bold" Height="45" Width="250" Click="btnPieChart_Click" IsEnabled="False"/>
 
         <DataGrid x:Name="dtgData" Margin="10,268,10,10" ItemsSource="{Binding}" IsReadOnly="True" FontSize="15" FontWeight="Normal"/>
         <ComboBox x:Name ="cbLetters" HorizontalAlignment="Left" Margin="674,132,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbSelect" Text = "Letra" FontSize="20" FontWeight="Normal"/>
 
         <Label x:Name="lbInformationFilter" Content="Selecciona una letra para filtrar" HorizontalAlignment="Left" Margin="178,117,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <lvc:PieChart x:Name="pieChart" LegendLocation="Right" Series="{Binding SeriesCollection}" Hoverable="True" InnerRadius="0" Margin="118,145,119,78"/>
-
+        <lvc:PieChart x:Name="pieChart" LegendLocation="Right" Series="{Binding seriesCollection}" Hoverable="True" InnerRadius="0" Margin="118,145,119,78"/>
+        <Label x:Name="lbTittleChart" Content="Gráfico circular" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" Margin="376,6,0,0"/>
+        <Button x:Name="btnBack" Content="Regresar" HorizontalAlignment="Left" Margin="878,27,0,0" VerticalAlignment="Top" BorderBrush="Black" Background="#FF4FAAFF" FontSize="25" FontWeight="Bold" Height="46" Width="141" Click="btnBack_Click"/>
 
     </Grid>
 </Window>

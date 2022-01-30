@@ -26,6 +26,7 @@ namespace data_report7
         private DataTable info;
         private ArrayList department;
         public string[] Labels { get; set; }
+        public Func<double, string> Formatter { get; set; }
 
 
         public importData()
@@ -48,12 +49,12 @@ namespace data_report7
                     MessageBox.Show("Documento cargado exitosamente", "Mensaje de información");
 
                     var read = reader.ReadLine();
-
                     string[] headers = read.Split(",");
                     table.Columns.Add(headers[0], typeof(string));
                     table.Columns.Add(headers[1], typeof(string));
                     table.Columns.Add(headers[2], typeof(string));
                     table.Columns.Add(headers[3], typeof(string));
+                    
                     table.Columns.Add(headers[4].Replace("/","-"), typeof(string));
 
 
@@ -84,10 +85,12 @@ namespace data_report7
                     dtgData.DataContext = table.DefaultView;
                     info = table;
 
+                    cbLetters.Items.Add("Letra");
+                    cbLetters.SelectedItem = "Letra";
 
                     cbLetters.Items.Add("A");
                     cbLetters.Items.Add("B");
-                    cbLetters.Items.Add("C");
+                    cbLetters.Items.Add("CHOCÓ");
                     cbLetters.Items.Add("D");
                     cbLetters.Items.Add("E");
                     cbLetters.Items.Add("F");
@@ -128,7 +131,15 @@ namespace data_report7
 
         private void cbSelect(object sender, SelectionChangedEventArgs e)
         {
-
+            if (cbLetters.SelectedItem.ToString().Equals("Letra"))
+            {
+                info.DefaultView.RowFilter = string.Empty;
+            }
+            else
+            {
+                info.DefaultView.RowFilter = "[Nombre Departamento] ='" + cbLetters.SelectedItem.ToString() + "'";
+                dtgData.DataContext = info.DefaultView;
+            }
 
         }
 

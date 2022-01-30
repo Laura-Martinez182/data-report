@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="diagrama.ico" />
     <Resource Include="icon.ico" />
     <Resource Include="importar.ico" />

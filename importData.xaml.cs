@@ -15,6 +15,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Navigation;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace data_report7
 {
@@ -25,9 +28,10 @@ namespace data_report7
     {
         private DataTable info;
         private ArrayList department;
+
         public string[] Labels { get; set; }
         public Func<double, string> Formatter { get; set; }
-
+        public SeriesCollection PieCollection { get; private set; }
 
         public importData()
         {
@@ -139,19 +143,57 @@ namespace data_report7
             {
                
                info.DefaultView.RowFilter =  "[Nombre Departamento] like '" + cbLetters.SelectedItem.ToString() + "%'";
-                    
-                
-                dtgData.DataContext = info.DefaultView;
+               dtgData.DataContext = info.DefaultView;
 
             }
 
         }
 
-
-        private void btnPieChartPage_Click(object sender, RoutedEventArgs e)
+        private void count()
         {
-            Window pageChart = new pieChart();
-            pageChart.ShowDialog();
+            string[] departmentsNum = new string[department.Count];
+            for (int i = 0; i < department.Count; i++)
+            {
+                string[] aux = (string[])department[i];
+                departmentsNum[i] = aux[0]; 
+            }
+
+            double[] municipios = new double[department.Count];
+            for (int i = 0; i < department.Count; i++)
+            {
+                string[] temp = (string[])department[i];
+                double quantity = double.Parse(temp[1]);
+                municipios[i] = quantity;
+            }
+
+            PieCollection = new SeriesCollection
+            {
+                new PieSeries
+                {
+                    Title = "Municipios",
+                    Values = new ChartValues<double>(municipios),
+                }
+            };
+
+            Labels = departmentsNum;
+            Formatter = value => value.ToString("N");
+
+            DataContext = this;
+
+
+        }
+
+    private void btnPieChartPage_Click(object sender, RoutedEventArgs e)
+        {
+            //Window pageChart = new pieChart();
+            //pageChart.ShowDialog();
+           
+            btnImportData.Visibility = Visibility.Hidden;
+            btnPieChartPage.Visibility = Visibility.Hidden;
+            cbLetters.Visibility = Visibility.Hidden;
+            dtgData.Visibility = Visibility.Visible;
+            count();
+
         }
     }
 }

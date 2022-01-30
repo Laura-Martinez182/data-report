@@ -12,9 +12,9 @@
         <Label Content="Importar datos" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" Margin="393,6,0,0"/>
         <Label Content="Dar click aquí para importar los datos" HorizontalAlignment="Left" Margin="178,73,0,0" VerticalAlignment="Top" FontSize="22"/>
         <Button x:Name="btnImportData" Content="Importar" HorizontalAlignment="Left" Margin="674,73,0,0" VerticalAlignment="Top" Background="#FFFF8787" BorderBrush="Black" FontSize="25" Click="btnImportData_Click" Visibility="Visible" Width="120" />
-        <Button x:Name="btnPieChartPage" Content="Ver gráfico" HorizontalAlignment="Left" Margin="393,190,0,0" VerticalAlignment="Top" BorderBrush="Black" Background="#FF4FAAFF" FontSize="25" FontWeight="Bold" Height="45" Width="250" Click="btnPieChartPage_Click"/>
+        <Button x:Name="btnPieChartPage" Content="Ver gráfico" HorizontalAlignment="Left" Margin="393,190,0,0" VerticalAlignment="Top" BorderBrush="Black" Background="#FF4FAAFF" FontSize="25" FontWeight="Bold" Height="45" Width="250" Click="btnPieChartPage_Click" IsEnabled="False"/>
 
-        <DataGrid x:Name="dtgData" Margin="10,268,10,10" ItemsSource="{Binding}" IsReadOnly="True" SelectionChanged="dtgData_SelectionChanged"/>
+        <DataGrid x:Name="dtgData" Margin="10,268,10,10" ItemsSource="{Binding}" IsReadOnly="True"/>
         <ComboBox x:Name ="cbLetters" HorizontalAlignment="Left" Margin="674,132,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbSelect" Text = "Letra"/>
 
         <Label Content="Selecciona una letra para filtrar" HorizontalAlignment="Left" Margin="178,117,0,0" VerticalAlignment="Top" FontSize="22"/>

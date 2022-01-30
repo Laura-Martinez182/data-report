@@ -36,11 +36,12 @@ namespace data_report7
         public importData()
         {
             InitializeComponent();
+            department = new ArrayList();
         }
 
         private void btnImportData_Click(object sender, RoutedEventArgs e)
         {
-            department = new ArrayList();
+            
             var table = new DataTable();
             OpenFileDialog openFile = new OpenFileDialog();
 
@@ -88,6 +89,7 @@ namespace data_report7
 
                     dtgData.DataContext = table.DefaultView;
                     info = table;
+                    btnPieChartPage.IsEnabled = true;
 
                     cbLetters.Items.Add("Letra");
                     cbLetters.SelectedItem = "Letra";
@@ -118,17 +120,13 @@ namespace data_report7
                     cbLetters.Items.Add("X");
                     cbLetters.Items.Add("Y");
                     cbLetters.Items.Add("Z");
-
                 }
 
                 else
                 {
                     MessageBox.Show("El documento no fue cargado exitosamente", "Mensaje de información");
                 }
-
-
             }
-
         }
 
 
@@ -141,12 +139,9 @@ namespace data_report7
             }
             else
             {
-               
                info.DefaultView.RowFilter =  "[Nombre Departamento] like '" + cbLetters.SelectedItem.ToString() + "%'";
                dtgData.DataContext = info.DefaultView;
-
             }
-
         }
 
         private void count()
@@ -179,21 +174,19 @@ namespace data_report7
             Formatter = value => value.ToString("N");
 
             DataContext = this;
-
-
         }
+
 
     private void btnPieChartPage_Click(object sender, RoutedEventArgs e)
         {
-            //Window pageChart = new pieChart();
-            //pageChart.ShowDialog();
+            Window pageChart = new pieChart();
+            pageChart.ShowDialog();
            
-            btnImportData.Visibility = Visibility.Hidden;
+            /*btnImportData.Visibility = Visibility.Hidden;
             btnPieChartPage.Visibility = Visibility.Hidden;
             cbLetters.Visibility = Visibility.Hidden;
-            dtgData.Visibility = Visibility.Visible;
+            dtgData.Visibility = Visibility.Visible;*/
             count();
-
         }
     }
 }
